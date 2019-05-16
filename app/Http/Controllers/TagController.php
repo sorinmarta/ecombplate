@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Illuminate\Http\Request;
-use App\Category;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,11 +45,11 @@ class CategoryController extends Controller
         /**
          * Store the new product values
          */
-        $category = new Category([
+        $tag = new Tag([
             'name' => $request->get('name'),
         ]);
 
-        $category->save();
+        $tag->save();
     }
 
     /**
@@ -93,8 +93,8 @@ class CategoryController extends Controller
         /**
          * Update the current values of the category
          */
-        $category = Category::find($id);
-        $category->name = $request->get('name');
+        $tag = Tag::find($id);
+        $tag->name = $request->get('name');
     }
 
     /**
@@ -105,7 +105,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $product = Category::find($id);
-        $product->delete();
+        $tag = Tag::find($id);
+        $tag->delete();
     }
 }
