@@ -39,8 +39,19 @@ class User extends Authenticatable
 
     /**
      * User has many Products statement
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function products(){
-        return $this->hasMany('App/Product');
+        return $this->hasMany('App\Product');
+    }
+
+    /**
+     * User has many Categories statement
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function categories(){
+        return $this->hasMany('App\Category');
     }
 }
